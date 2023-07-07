@@ -1,0 +1,26 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: gitops-appmesh
+  region: eu-west-2
+  version: "1.27"
+  tags:
+    project: gitops-appmesh
+
+availabilityZones: ["eu-west-2a", "eu-west-2b", "eu-west-2c"]
+
+nodeGroups:
+  - name: default
+    instanceType: m5.large
+    desiredCapacity: 3
+    volumeSize: 149
+    iam:
+      withAddonPolicies:
+        appMesh: true
+        xRay: true
+    labels:
+      roles: workers
+    tags:
+      project: gitops-appmesh
+
