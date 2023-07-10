@@ -62,15 +62,15 @@ spec:
         interval: 30s
     # testing (optional)
     webhooks:
-      #- name: "ask for confirmation gate"
-      #  type: confirm-rollout
-      #  url: "http://flagger-loadtester.$(NAMESPACE)/gate/check"
-      #- name: "promotion gate"
-      #  type: confirm-promotion
-      #  url: http://flagger-loadtester.$(NAMESPACE)/gate/halt
-      - name: "rollback"
-        type: rollback
-        url: http://192.168.86.252:8080/rollback/check
+      - name: "ask for confirmation gate"
+        type: confirm-rollout
+        url: "http://flagger-loadtester.$(NAMESPACE)/gate/check"
+      - name: "promotion gate"
+        type: confirm-promotion
+        url: http://flagger-loadtester.$(NAMESPACE)/gate/halt
+      #- name: "rollback"
+      #  type: rollback
+      #  url: http://flagger-loadtester.$(NAMESPACE)/rollback/check
       - name: acceptance-test
         type: pre-rollout
         url: http://flagger-loadtester.$(NAMESPACE)/
