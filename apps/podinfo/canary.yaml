@@ -64,7 +64,7 @@ spec:
     webhooks:
       - name: "confirm gate"
         type: confirm-rollout
-        url: "http://flagger-loadtester.$(NAMESPACE)/gate/halt"
+        url: "http://flagger-loadtester.$(NAMESPACE)/gate/approve"
       - name: acceptance-test
         type: pre-rollout
         url: http://flagger-loadtester.$(NAMESPACE)/
