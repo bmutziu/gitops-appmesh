@@ -62,6 +62,9 @@ spec:
         interval: 30s
     # testing (optional)
     webhooks:
+      - name: "confirm gate"
+        type: confirm-rollout
+        url: "http://flagger-loadtester.$(NAMESPACE)/gate/halt"
       - name: acceptance-test
         type: pre-rollout
         url: http://flagger-loadtester.$(NAMESPACE)/
