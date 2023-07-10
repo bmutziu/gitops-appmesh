@@ -67,7 +67,7 @@ spec:
         url: "http://flagger-loadtester.$(NAMESPACE)/gate/check"
       - name: "promotion gate"
         type: confirm-promotion
-        url: http://flagger-loadtester.$(NAMESPACE)/gate/halt
+        url: http://flagger-loadtester.$(NAMESPACE)/gate/approve
       #- name: "rollback"
       #  type: rollback
       #  url: http://flagger-loadtester.$(NAMESPACE)/rollback/check
